@@ -1,7 +1,7 @@
 name: Hot News Crawler
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 0,6,12,18 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 0,6,12,18
+          fetch-depth: 0 
           clean: true
           
       - name: Set up Python
